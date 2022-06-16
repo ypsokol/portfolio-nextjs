@@ -13,13 +13,16 @@ export const dropIn: Variants = {
   [animationState.animate]: {
     y: 0,
     transition: {
-      duration: 0.1,
+      duration: 0.9,
       type: "spring",
       damping: 25,
-      stiffness: 500,
+      stiffness: 200,
     },
   },
   [animationState.exit]: {
     y: "100vh",
+    transition: {
+      duration: 0.2,
+    },
   },
 };

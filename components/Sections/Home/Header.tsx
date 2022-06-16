@@ -26,12 +26,7 @@ const headerVariants = {
 
 const Header = () => {
   return (
-    <motion.div
-      className="home__data"
-      initial="hidden"
-      whileInView="visible"
-      variants={headerVariants}
-    >
+    <motion.div className="home__data" variants={headerVariants} {...animation}>
       <span className="home__greeting">Hello, I&apos;m</span>
       <h1 className="home__name">Ansel Klee</h1>
       <h3 className="home__education">Frontend Developer</h3>
