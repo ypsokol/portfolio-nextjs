@@ -14,34 +14,33 @@ import Head from "../components/Layout/Head";
 import Fallback from "../components/Threejs/HeroWithLamina/Fallback";
 
 const HeroWithLaminaComponent = lazy(
-  () => import("../components/Threejs/HeroWithLamina")
+	() => import("../components/Threejs/HeroWithLamina")
 );
 const title = "Go ahead, make my day better.";
 
 const App: NextPage = () => {
-  return (
-    <>
-      <Head />
-      <Nav />
+	return (
+		<>
+			<Head />
+			<Nav />
 
-      <main className="main">
-        <Suspense fallback={"Loading>>>"}>
-          <HeroWithLaminaComponent title={`GO\nAHEAD, MAKE\nMY DAY\nBETTER.`} />
-        </Suspense>
-        <Fallback />
-        {/*<Home />*/}
-        <About />
+			<main className="main">
+				<Suspense fallback={<Fallback />}>
+					<HeroWithLaminaComponent title={`GO\nAHEAD, MAKE\nMY DAY\nBETTER.`} />
+				</Suspense>
+				{/*<Home />*/}
+				<About />
 
-        <Skills />
-        <Services />
-        <Work />
-        <Testimonials />
-        <Contact />
-      </main>
+				<Skills />
+				<Services />
+				<Work />
+				<Testimonials />
+				<Contact />
+			</main>
 
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 };
 
 // export const getStaticProps: GetStaticProps = async ({
