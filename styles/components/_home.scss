@@ -1,0 +1,183 @@
+@import "../variables";
+@import "../mixins";
+
+.shape {
+  position: absolute;
+  background-color: hsla(250, 66%, 75%, 0.5);
+  filter: blur(112px);
+  border-radius: 50%;
+
+  &--big {
+    width: 400px;
+    height: 400px;
+
+    @include lg-screen {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &--small {
+    width: 300px;
+    height: 300px;
+
+    @include lg-screen {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  &--smaller {
+    width: 180px;
+    height: 180px;
+    filter: blur(64px);
+  }
+}
+
+.home {
+  &__container {
+    position: relative;
+    row-gap: 4.5rem;
+    padding-top: 2rem;
+
+    & .shape__big,
+    .shape__small {
+      position: absolute;
+    }
+
+    & .shape {
+      &--big {
+        left: -9rem;
+        top: -4rem;
+      }
+      &--small {
+        right: -10rem;
+        bottom: 3rem;
+      }
+    }
+  }
+
+  &__data {
+    text-align: center;
+  }
+
+  &__greeting,
+  &__education {
+    font-size: $small-font-size;
+    font-weight: $font-medium;
+  }
+
+  &__greeting {
+    display: block;
+    color: $title-color;
+    margin-bottom: 0.25rem;
+  }
+
+  &__education {
+    color: $text-color;
+    margin-bottom: 2.5rem;
+  }
+
+  &__name {
+    font-size: $biggest-font-size;
+  }
+
+  &__img {
+    filter: blur(0);
+    width: 160px;
+
+    @include lg-screen {
+      width: 220px;
+    }
+  }
+
+  &__handle {
+    justify-self: center;
+    width: 190px;
+    height: 293px;
+    background: linear-gradient(180deg, $primary-color, $nav-menu-item);
+    border-radius: 10rem 10rem 1rem 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+
+    @include lg-screen {
+      width: 290px;
+      height: 480px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__social,
+  &__scroll {
+    position: absolute;
+  }
+
+  &__social {
+    bottom: 5rem;
+    left: 0;
+    display: grid;
+    row-gap: 0.5rem;
+
+    &::after {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background-color: $primary-color;
+      transform: rotate(90deg) translate(16px, 3px);
+
+      @include lg-screen {
+        transform: rotate(90deg) translate(16px, 0);
+      }
+    }
+
+    &-link {
+      width: max-content;
+      background-color: $container-color;
+      padding: 0.25rem;
+      border-radius: 0.25rem;
+      display: flex;
+      font-size: 1rem;
+      transition: $normal-transition;
+
+      @include lg-screen {
+        padding: 0.4rem;
+        font-size: 1.25rem;
+      }
+
+      &:hover {
+        background-color: $primary-color;
+        color: $white;
+      }
+    }
+  }
+
+  &__scroll {
+    color: $primary-color;
+    right: -1.5rem;
+    bottom: 4rem;
+    display: grid;
+    row-gap: 2.25rem;
+    justify-items: center;
+
+    &-icon {
+      font-size: 1.25rem;
+
+      @include lg-screen {
+        font-size: 2rem;
+      }
+    }
+
+    &-name {
+      font-size: $smaller-font-size;
+      transform: rotate(-90deg);
+    }
+  }
+}

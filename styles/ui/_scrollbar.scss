@@ -1,0 +1,21 @@
+@import "../variables";
+@import "../mixins";
+
+$scrollbar-color: hsl(219, 8%, 20%);
+$scrollbar-thumb-color: hsl(250, 10%, 50%);
+$scrollbar-thumb-color-alt: $primary-color;
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: $scrollbar-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-thumb-color;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: $scrollbar-thumb-color-alt;
+  }
+}

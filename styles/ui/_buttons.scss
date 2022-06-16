@@ -1,0 +1,29 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.btn {
+  display: inline-block;
+  background-color: $primary-color;
+  color: $body-color;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: $font-medium;
+  border: 2px solid $primary-color;
+  transition: $normal-transition;
+  width: max-content;
+
+  &:hover {
+    background-color: $primary-color-alt;
+    color: $body-color;
+  }
+
+  &-outline {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color-alt;
+    }
+  }
+}

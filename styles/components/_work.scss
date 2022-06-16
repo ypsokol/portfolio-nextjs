@@ -1,0 +1,91 @@
+@import "../variables";
+@import "../mixins";
+
+.work {
+  &__container {
+    padding-top: 1rem;
+    justify-content: center;
+
+    @include sm-screen {
+      justify-content: center;
+    }
+
+    @include md-screen {
+      grid-template-columns: repeat(2, max-content);
+    }
+
+    @include lg-screen {
+      gap: 3rem;
+    }
+  }
+
+  &__filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  &__item {
+    cursor: pointer;
+    color: $title-color;
+    padding: 0.25rem 0.75rem;
+    font-weight: $font-medium;
+    border-radius: 0.5rem;
+    border: 0.5rem;
+
+    &--active {
+      background-color: $primary-color;
+      color: $body-color;
+    }
+  }
+
+  &__card {
+    @include md-screen {
+      width: 295px;
+    }
+    @include lg-screen {
+      width: 380px;
+    }
+  }
+
+  &__img-lg {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: $normal-font-size;
+    font-weight: $font-medium;
+    margin-bottom: 0.25rem;
+
+    @include lg-screen {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: 1rem;
+  }
+
+  &__button {
+    width: max-content;
+    color: $primary-color;
+    font-size: $small-font-size;
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+
+    &:hover &-icon {
+      transform: translateX(0.25rem);
+    }
+
+    &-icon {
+      font-size: 1rem;
+      transition: $normal-transition;
+    }
+  }
+}

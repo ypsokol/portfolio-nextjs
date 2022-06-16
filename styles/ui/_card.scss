@@ -1,0 +1,90 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+$card-radius: 2rem;
+$card-radius-alt: 1rem;
+
+$card-outline-radius: 4rem;
+
+.card {
+  background-color: $container-color;
+  border-radius: $card-radius;
+  transition: $slow-transition;
+  overflow: hidden;
+
+  &:hover,
+  &:hover &-media img {
+    border-radius: $card-radius-alt;
+    background-color: $container-color-alt;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+
+    & h3 {
+      font-size: $h3-font-size;
+    }
+  }
+
+  &-media {
+    & img {
+      border-radius: $card-radius;
+      transition: $slow-transition;
+    }
+  }
+
+  &-actions {
+    color: $primary-color;
+    font-size: $normal-font-size;
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    width: max-content;
+    cursor: pointer;
+    padding: 0.2rem 0.2rem 0.2rem 0;
+
+    &:hover &-icon {
+      transform: translateX(0.25rem);
+    }
+
+    &-icon {
+      font-size: 1.2rem;
+      transition: $normal-transition;
+    }
+  }
+
+  &__outline {
+    display: grid;
+    background-color: transparent;
+    border-radius: $card-outline-radius;
+    border: 2px solid $container-color-alt;
+    overflow: hidden;
+
+    @include sm-screen {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-media {
+      transition: $slow-transition;
+
+      @include sm-screen {
+        height: 100%;
+      }
+      //height: 300px;
+
+      & img {
+        //height: 100%;
+        border-radius: $card-outline-radius;
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+    }
+  }
+}

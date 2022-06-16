@@ -1,0 +1,51 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @include lg-screen {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding: 4.5rem 0 1rem;
+
+  @include lg-screen {
+    padding: 6.5rem 0 1rem;
+  }
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: $h2-font-size;
+  color: $primary-color;
+  margin-bottom: 2rem;
+
+  @include lg-screen {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.section__subtitle {
+  display: block;
+  font-size: $smaller-font-size;
+  color: $text-color-light;
+}

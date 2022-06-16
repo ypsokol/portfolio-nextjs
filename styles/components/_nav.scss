@@ -1,0 +1,134 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.change-theme {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: $fast-transition;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(50px);
+  z-index: $z-fixed;
+
+  &__container {
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include lg-screen {
+      height: calc(#{$header-height} + 1rem);
+    }
+  }
+
+  &__logo {
+    font-size: $h3-font-size;
+    color: $white;
+    font-weight: $font-medium;
+    transition: $normal-transition;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__menu {
+    display: inline;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    z-index: 1000;
+
+    @include md-screen {
+      position: inherit;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      row-gap: 3rem;
+      padding-top: 9rem;
+      background-color: $primary-color;
+      height: 100vh;
+
+      @include md-screen {
+        flex-direction: row;
+        justify-content: flex-end;
+        column-gap: 3rem;
+        padding-top: 0;
+        height: 100%;
+        background-color: transparent;
+      }
+    }
+
+    &-item {
+      @include md-screen {
+        display: flex;
+        text-align: center;
+        align-items: center;
+      }
+    }
+
+    &-link {
+      text-transform: uppercase;
+      color: $title-color;
+      font-size: $h2-font-size;
+      font-weight: $font-medium;
+      transition: 0.3s;
+
+      @include md-screen {
+        font-size: 1.15rem;
+        text-transform: initial;
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__show-menu {
+    right: 0;
+    transition: 0.3s;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+
+    @include md-screen {
+      display: none;
+    }
+  }
+
+  &__toggle {
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    @include md-screen {
+      display: none;
+    }
+  }
+
+  &__icon {
+    &-container {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

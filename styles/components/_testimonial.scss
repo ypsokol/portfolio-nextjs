@@ -1,0 +1,35 @@
+@import "../variables";
+@import "../mixins";
+
+.testimonial {
+  &__container {
+    @include lg-screen {
+      width: 750px;
+    }
+  }
+  &__card {
+    margin-bottom: 2rem;
+
+    @include lg-screen {
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  &__img {
+    width: 60px;
+    & img {
+      border-radius: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__name {
+    font-size: $normal-font-size;
+    font-weight: $font-medium;
+    margin-bottom: 0.25rem;
+  }
+
+  &__description {
+    font-size: $small-font-size;
+  }
+}

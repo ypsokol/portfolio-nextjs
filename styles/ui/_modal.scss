@@ -1,0 +1,35 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+$backdrop-color: $primary-color;
+
+.modal {
+  &-backdrop {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: $modal-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: $z-modal;
+    place-items: center;
+  }
+
+  &-container {
+    width: clamp(50%, 700px, 90%);
+    //height: min(50%, 300px);
+    margin: auto;
+    padding: 2rem;
+    border-radius: 3rem;
+    background: $container-color;
+
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    //background-color: $modal-color;
+  }
+}

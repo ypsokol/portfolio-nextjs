@@ -1,0 +1,67 @@
+@import "../variables";
+@import "../mixins";
+
+.services {
+  &__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-top: 1rem;
+
+    @include sm-screen {
+      grid-template-columns: repeat(2, 160px);
+      justify-content: center;
+    }
+
+    @include lg-screen {
+      grid-template-columns: repeat(3, 192px);
+      column-gap: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: $h3-font-size;
+    margin-bottom: 2.5rem;
+    line-height: 24px;
+  }
+
+  &__modal {
+    &-title {
+      font-size: $h3-font-size;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    &-description {
+      font-size: $normal-font-size;
+      margin-bottom: 2rem;
+    }
+
+    &-list {
+      list-style: inside;
+      display: grid;
+      row-gap: 0.75rem;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 0.5rem;
+    }
+
+    &-icon {
+      font-size: $h1-font-size;
+      color: $primary-color;
+    }
+
+    &-info {
+      font-size: $normal-font-size;
+    }
+
+    &-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+}

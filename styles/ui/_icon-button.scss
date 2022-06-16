@@ -1,0 +1,26 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.icon-button {
+  display: grid;
+  place-content: center;
+  height: 48px;
+  width: 48px;
+  border-radius: 100px;
+  color: $white;
+
+  &:hover {
+    background-color: $container-color-alt;
+  }
+
+  &:active {
+    border: 2px solid $white;
+  }
+
+  &--active {
+  }
+
+  &-icon {
+    font-size: 1.25rem;
+  }
+}

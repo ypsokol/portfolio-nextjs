@@ -1,0 +1,40 @@
+@import "../variables";
+@import "../mixins";
+
+.drawer {
+  &__icon {
+  }
+
+  &__container {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 360px;
+    height: calc(100vh - 1rem);
+    background-color: $container-color-alt;
+    padding: 12px;
+    border-radius: 2rem;
+    z-index: $z-modal + 1;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 0.5rem;
+    & li {
+      font-size: 1.2rem;
+      //background-color: $container-color;
+      padding: 1rem;
+      border-radius: 1000px;
+
+      &:hover {
+        background-color: $container-color;
+      }
+    }
+  }
+}
