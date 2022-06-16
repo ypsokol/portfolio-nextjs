@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { lazy, Suspense } from "react";
 
 import Nav from "../components/Layout/Nav";
 import Home from "../components/Sections/Home";
@@ -11,6 +12,10 @@ import Footer from "../components/Layout/Footer";
 import Skills from "../components/Sections/Skills";
 import Head from "../components/Layout/Head";
 
+const LaminaComponent = lazy(
+  () => import("../components/Threejs/TextLamina/Lamina")
+);
+
 const App: NextPage = () => {
   return (
     <>
@@ -20,6 +25,9 @@ const App: NextPage = () => {
       <main className="main">
         <Home />
         <About />
+        <Suspense fallback={"Loading>>>"}>
+          <LaminaComponent />
+        </Suspense>
         <Skills />
         <Services />
         <Work />
