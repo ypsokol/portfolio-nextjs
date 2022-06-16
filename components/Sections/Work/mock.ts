@@ -14,6 +14,8 @@ export const projects: Projects = [
     name: "Electronic car store",
     type: "web",
     images: [ElecarImg],
+    demo: "https://electronic-cars-store.vercel.app/",
+    github: "https://github.com/ypsokol/electronic-cars-store",
     description: [
       {
         title: "",
@@ -111,5 +113,7 @@ export const projectsPart = projects.map((item) => ({
   id: item.id,
   name: item.name,
   type: item.type,
+  demo: item.demo,
+  github: item.github,
   image: item.images[0],
 }));

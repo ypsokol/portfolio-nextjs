@@ -15,17 +15,15 @@ const Work = () => {
       <SectionSubtitle subtitle="Resent Works" />
       <SectionTitle title="My Portfolio" />
 
-      <div className="work__filters">
-        <span className="work__item work__item--active">All</span>
-        <span className="work__item">Web</span>
-        <span className="work__item">Movil</span>
-        <span className="work__item">Design</span>
-      </div>
-
       <div className="work__container container grid">
         {projectsPart.map((project, index) => (
           <ModalProvider key={index}>
-            <Card image={project.image} name={project.name} />
+            <Card
+              image={project.image}
+              name={project.name}
+              demo={project.demo}
+              github={project.github}
+            />
           </ModalProvider>
         ))}
       </div>

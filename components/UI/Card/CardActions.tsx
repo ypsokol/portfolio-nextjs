@@ -1,5 +1,6 @@
-import { HiOutlineArrowCircleRight } from "react-icons/hi";
 import Link from "next/link";
+
+import { HiOutlineArrowCircleRight } from "react-icons/hi";
 
 type Props = {
   href?: string;
@@ -7,6 +8,7 @@ type Props = {
   iconClass?: string;
   className?: string;
   onClick?: () => void;
+  [x: string]: any;
 };
 
 const CardActions = ({
@@ -15,10 +17,11 @@ const CardActions = ({
   iconClass = "",
   className = "",
   onClick,
+  ...props
 }: Props) => {
   return (
-    <Link href={href} scroll={false}>
-      <a className={`card-actions ${className}`} onClick={onClick}>
+    <Link href={href} scroll={false} passHref>
+      <a className={`card-actions ${className}`} onClick={onClick} {...props}>
         {title}{" "}
         <HiOutlineArrowCircleRight
           className={`card-actions-icon ${iconClass}`}

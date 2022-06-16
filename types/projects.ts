@@ -6,6 +6,8 @@ export type Project = {
   type: Type;
   description: Description[];
   images: Images[];
+  demo?: string;
+  github?: string;
 };
 
 export type Projects = Project[];
