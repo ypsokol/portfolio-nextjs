@@ -32,5 +32,13 @@
 }
 
 canvas {
-  height: 700px;
+  height: 300px;
+
+  @include md-screen {
+    height: 500px;
+  }
+
+  @include lg-screen {
+    height: 700px;
+  }
 }

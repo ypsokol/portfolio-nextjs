@@ -1,25 +1,19 @@
-import * as THREE from "three";
-import { useRef, useMemo, useEffect } from "react";
-import { LayerMaterial, Depth } from "lamina";
-import { Canvas, extend, useFrame, useThree } from "@react-three/fiber";
-import {
-  EffectComposer,
-  SSAO,
-  Bloom,
-  Noise,
-} from "@react-three/postprocessing";
-import { Caption } from "./Lamina";
+import { useMemo, useRef } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
+import { Object3D } from "three";
 
-type Swarm = {
+import Lightning from "./Lightning";
+import PointLight from "./PointLight";
+
+type Props = {
   count: number;
 };
 
-function Swarm({ count }: Swarm) {
+const Floaters = ({ count }: Props) => {
   const mesh = useRef();
-  const light = useRef();
   const { viewport, mouse } = useThree();
 
-  const dummy = useMemo(() => new THREE.Object3D(), []);
+  const dummy = useMemo(() => new Object3D(), []);
   // Generate some random positions, speed factors and timings
   const particles = useMemo(() => {
     const temp = [];
@@ -69,71 +63,17 @@ function Swarm({ count }: Swarm) {
     });
     mesh.current.instanceMatrix.needsUpdate = true;
   });
-  const circleRef = useRef();
-  useFrame(() => (circleRef.current.rotation.y += 0.009));
-
   return (
     <>
-      <group ref={circleRef}>
-        {/* Sphere with rotation */}
-        <Caption>{`THE\nSEVENTY-TWO\nNAMES\nOF GOD.`}</Caption>
-        <mesh>
-          <sphereBufferGeometry args={[2, 9, 9]} />
-          <meshStandardMaterial wireframe />
-        </mesh>
-      </group>
+      <Lightning />
+      <PointLight />
+
       <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
         <sphereBufferGeometry args={[1, 1, 2]} />
         <meshStandardMaterial wireframe />
       </instancedMesh>
     </>
   );
-}
+};
 
-// Cursor position checker and moving objects
-function Rig({ v = new THREE.Vector3() }) {
-  return useFrame((state) => {
-    state.camera.position.lerp(
-      v.set(state.mouse.x / 2, state.mouse.y / 2, 10),
-      0.05
-    );
-  });
-}
-
-export default function Bg() {
-  return (
-    <Canvas camera={{ fov: 75, position: [0, 0, 7] }}>
-      <Rig />
-
-      {/* Color of figure lighting */}
-      <color attach="background" args={["hsl(219, 48%, 8%)"]} />
-
-      {/* Color of general light */}
-      <pointLight intensity={1} color="hsl(250, 66%, 75%)" />
-      <spotLight
-        intensity={0.2}
-        position={[70, 70, 70]}
-        penumbra={1}
-        color="hsl(250, 66%, 75%)"
-      />
-      <Swarm count={200} />
-
-      {/* Adding different postprocessing effects */}
-      <EffectComposer multisampling={0}>
-        <Noise opacity={0.1} />
-        <Bloom
-          intensity={1.5}
-          kernelSize={2}
-          luminanceThreshold={0}
-          luminanceSmoothing={0.3}
-        />
-        <Bloom
-          intensity={1.5}
-          kernelSize={4}
-          luminanceThreshold={0}
-          luminanceSmoothing={0.0}
-        />
-      </EffectComposer>
-    </Canvas>
-  );
-}
+export default Floaters;
