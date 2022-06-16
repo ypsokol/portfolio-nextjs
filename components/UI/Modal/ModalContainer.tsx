@@ -22,7 +22,8 @@ const ModalContainer = ({ className, children }: PropsWithChildren<Props>) => {
   }, []);
 
   return (
-    <ModalBackdrop onClose={close}>
+    <div className="modal">
+      <ModalBackdrop onClose={close} />
       <motion.div
         className={`modal-container ${className}`}
         onClick={handleClickOnModal}
@@ -31,7 +32,7 @@ const ModalContainer = ({ className, children }: PropsWithChildren<Props>) => {
       >
         {children}
       </motion.div>
-    </ModalBackdrop>
+    </div>
   );
 };
 

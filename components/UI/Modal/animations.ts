@@ -9,11 +9,9 @@ export const animationState = {
 export const dropIn: Variants = {
   [animationState.initial]: {
     y: "-100vh",
-    opacity: 0,
   },
   [animationState.animate]: {
     y: 0,
-    opacity: 1,
     transition: {
       duration: 0.1,
       type: "spring",
@@ -23,6 +21,5 @@ export const dropIn: Variants = {
   },
   [animationState.exit]: {
     y: "100vh",
-    opacity: 0,
   },
 };

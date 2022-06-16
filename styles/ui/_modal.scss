@@ -4,22 +4,24 @@
 $backdrop-color: $primary-color;
 
 .modal {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+
   &-backdrop {
     position: fixed;
     inset: 0;
     height: 100%;
     width: 100%;
     background: $modal-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: $z-modal;
-    place-items: center;
   }
 
   &-container {
     width: clamp(50%, 700px, 90%);
-    //height: min(50%, 300px);
     margin: auto;
     padding: 2rem;
     border-radius: 3rem;
@@ -30,6 +32,6 @@ $backdrop-color: $primary-color;
     justify-content: center;
     align-items: center;
 
-    //background-color: $modal-color;
+    z-index: $z-modal + 1;
   }
 }
