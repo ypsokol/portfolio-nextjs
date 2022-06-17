@@ -2,14 +2,12 @@ import type { NextPage } from "next";
 import { lazy, Suspense } from "react";
 
 import Nav from "../components/Layout/Nav";
-import Home from "../components/Sections/Home";
 import About from "../components/Sections/About";
 import Services from "../components/Sections/Services";
 import Work from "../components/Sections/Work";
 import Testimonials from "../components/Sections/Testimonials";
 import Contact from "../components/Sections/Contact";
 import Footer from "../components/Layout/Footer";
-import Skills from "../components/Sections/Skills";
 import Head from "../components/Layout/Head";
 import Fallback from "../components/Threejs/HeroWithLamina/Fallback";
 

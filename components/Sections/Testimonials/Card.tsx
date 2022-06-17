@@ -35,12 +35,16 @@ const Card = ({
   return (
     <motion.div variants={testimonialVariants(isEven)} {...animation}>
       <CardContainer className="testimonial__card">
-        <CardContent>
+        <CardContent className="testimonial__comment">
           <div className="testimonial__img">
-            <Image src={image} alt="" placeholder="blur" />
+            <Image src={image} alt="" placeholder="blur" objectFit="fill" />
           </div>
-          <h3 className="testimonial__name">{name}</h3>
-          <p className="testimonial__description">{description}</p>
+          <div>
+            <h3 className="testimonial__name">{name}</h3>
+            <p className="testimonial__description">{description}</p>
+          </div>
+          {/*<h3 className="testimonial__name">{name}</h3>*/}
+          {/*<p className="testimonial__description">{description}</p>*/}
         </CardContent>
       </CardContainer>
     </motion.div>

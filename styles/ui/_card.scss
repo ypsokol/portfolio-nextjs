@@ -29,6 +29,7 @@ $card-outline-radius: 4rem;
   }
 
   &-media {
+    position: relative;
     & img {
       border-radius: $card-radius;
       transition: $slow-transition;
@@ -61,23 +62,23 @@ $card-outline-radius: 4rem;
     border-radius: $card-outline-radius;
     border: 2px solid $container-color-alt;
     overflow: hidden;
+    grid-template-rows: repeat(2, max-content);
 
     @include sm-screen {
       grid-template-columns: repeat(2, 1fr);
     }
 
     &-media {
+      position: relative;
       transition: $slow-transition;
+      height: 400px;
 
       @include sm-screen {
         height: 100%;
       }
-      //height: 300px;
 
       & img {
-        //height: 100%;
         border-radius: $card-outline-radius;
-        object-fit: cover;
       }
     }
 

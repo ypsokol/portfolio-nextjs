@@ -15,10 +15,25 @@
   }
 
   &__img {
+    position: relative;
     width: 60px;
+    margin-right: 2rem;
+
     & img {
       border-radius: 3rem;
       margin-bottom: 1rem;
+    }
+
+    @include sm-screen {
+      width: 100px;
+    }
+  }
+
+  &__comment {
+    display: flex;
+
+    @include sm-screen {
+      flex-direction: row;
     }
   }
 

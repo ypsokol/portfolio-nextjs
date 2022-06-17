@@ -8,7 +8,7 @@ type Props = {
 const CardMedia = ({ src, className = "" }: Props) => {
   return (
     <div className={`card-media ${className}`}>
-      <Image src={src} placeholder="blur" alt="" />
+      <Image src={src} placeholder="blur" alt="" objectFit="fill" />
     </div>
   );
 };

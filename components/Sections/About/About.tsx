@@ -18,7 +18,7 @@ const About = () => {
           <Image
             src={aboutImg}
             alt=""
-            layout="responsive"
+            layout="fill"
             objectFit="cover"
             placeholder="blur"
           />
