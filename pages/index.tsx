@@ -9,7 +9,7 @@ import Testimonials from "../components/Sections/Testimonials";
 import Contact from "../components/Sections/Contact";
 import Footer from "../components/Layout/Footer";
 import Head from "../components/Layout/Head";
-import Fallback from "../components/Threejs/HeroWithLamina/Fallback";
+import Loading from "../components/UI/Loading";
 
 const HeroWithLaminaComponent = lazy(
   () => import("../components/Threejs/HeroWithLamina")
@@ -22,13 +22,14 @@ const App: NextPage = () => {
       <Nav />
 
       <main className="main">
-        <Suspense fallback={<Fallback />}>
-          <HeroWithLaminaComponent title={`GO\nAHEAD, MAKE\nMY DAY\nBETTER.`} />
+        <Suspense fallback={<Loading />}>
+          <div className="canvas__hero">
+            <HeroWithLaminaComponent
+              title={`GO\nAHEAD, MAKE\nMY DAY\nBETTER.`}
+            />
+          </div>
         </Suspense>
-        {/*<Home />*/}
         <About />
-
-        {/*<Skills />*/}
         <Services />
         <Work />
         <Testimonials />
@@ -39,18 +40,5 @@ const App: NextPage = () => {
     </>
   );
 };
-
-// export const getStaticProps: GetStaticProps = async ({
-//   locale,
-//   defaultLocale,
-// }) => {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale || (defaultLocale as string), [
-//         "about",
-//       ])),
-//     },
-//   };
-// };
 
 export default App;

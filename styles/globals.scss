@@ -31,14 +31,48 @@
   object-fit: cover;
 }
 
+.canvas {
+  &__hero {
+    transition: $normal-transition;
+    height: 300px;
+
+    @include md-screen {
+      height: 500px;
+    }
+
+    @include lg-screen {
+      height: 700px;
+    }
+  }
+}
+
+.loading {
+  &__circle {
+    width: 100px;
+    height: 100px;
+    margin: 110px auto 0;
+    border: solid 10px #8822aa;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+
+    transition: all 0.5s ease-in;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 canvas {
-  height: 300px;
-
-  @include md-screen {
-    height: 500px;
-  }
-
-  @include lg-screen {
-    height: 700px;
-  }
+  height: 100%;
 }
