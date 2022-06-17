@@ -1,8 +1,4 @@
-import {
-  SectionContainer,
-  SectionSubtitle,
-  SectionTitle,
-} from "../../UI/Section";
+import { SectionContainer, SectionHeader } from "../../UI/Section";
 import { Sections } from "../../../constants/sections";
 
 import { contacts } from "./mock";
@@ -14,9 +10,10 @@ import Form from "./Form";
 const Contact = () => {
   return (
     <SectionContainer id={Sections.contact}>
-      <SectionSubtitle subtitle="Get in touch" />
-      <SectionTitle title="Contact Me" />
-
+      <SectionHeader
+        title="Contacts"
+        subtitle="Great way to keep in touch with me"
+      />
       <div className="contact__container container grid">
         <Content title="Talk to me">
           <div className="contact__info">

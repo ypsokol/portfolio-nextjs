@@ -6,14 +6,13 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     padding-top: 1rem;
+    justify-content: center;
 
     @include sm-screen {
-      grid-template-columns: repeat(2, 160px);
-      justify-content: center;
+      grid-template-columns: repeat(3, 1fr);
     }
 
     @include lg-screen {
-      grid-template-columns: repeat(3, 192px);
       column-gap: 3rem;
     }
   }

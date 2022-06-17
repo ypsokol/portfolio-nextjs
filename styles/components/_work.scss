@@ -5,13 +5,10 @@
   &__container {
     padding-top: 1rem;
     justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
 
     @include sm-screen {
-      justify-content: center;
-    }
-
-    @include md-screen {
-      grid-template-columns: repeat(2, max-content);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @include lg-screen {
@@ -38,15 +35,6 @@
     &--active {
       background-color: $primary-color;
       color: $body-color;
-    }
-  }
-
-  &__card {
-    @include md-screen {
-      width: 295px;
-    }
-    @include lg-screen {
-      width: 380px;
     }
   }
 

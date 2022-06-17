@@ -1,0 +1,30 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.section {
+  padding: 4.5rem 0 1rem;
+
+  @include lg-screen {
+    padding: 6.5rem 0 1rem;
+  }
+
+  &__header {
+    text-align: left;
+    margin-bottom: 2rem;
+
+    @include lg-screen {
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  &__title {
+    font-size: $biggest-font-size;
+    color: $primary-color;
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: $biggest-font-size;
+    color: $text-color-light;
+  }
+}

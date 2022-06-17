@@ -2,11 +2,7 @@ import { Sections } from "../../../constants/sections";
 
 import { CardContainer, CardContent } from "../../UI/Card";
 import { about, description } from "./mock";
-import {
-  SectionContainer,
-  SectionSubtitle,
-  SectionTitle,
-} from "../../UI/Section";
+import { SectionContainer, SectionHeader } from "../../UI/Section";
 import Button from "../../UI/Button";
 import Image from "next/image";
 
@@ -15,8 +11,7 @@ import aboutImg from "/public/images/about.jpg";
 const About = () => {
   return (
     <SectionContainer className="about section" id={Sections.about}>
-      <SectionSubtitle subtitle="My Intro" />
-      <SectionTitle title="About Me" />
+      <SectionHeader title="About me" subtitle="I know that I know nothing" />
 
       <div className="card__outline container">
         <div className="card__outline-media">

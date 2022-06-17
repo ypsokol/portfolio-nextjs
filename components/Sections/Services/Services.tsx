@@ -1,8 +1,4 @@
-import {
-  SectionContainer,
-  SectionSubtitle,
-  SectionTitle,
-} from "../../UI/Section";
+import { SectionContainer, SectionHeader } from "../../UI/Section";
 import Modal from "./Modal";
 import Card from "./Card";
 import { services } from "./mock";
@@ -12,8 +8,7 @@ import { ModalProvider } from "../../../context/modal/provider";
 const Services = () => {
   return (
     <SectionContainer id={Sections.services}>
-      <SectionSubtitle subtitle="What I Offer" />
-      <SectionTitle title="My Services" />
+      <SectionHeader title="Offers" subtitle="Which I will gladly respond" />
 
       <div className="services__container container grid">
         {services.map((service, index) => (

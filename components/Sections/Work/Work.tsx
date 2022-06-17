@@ -1,8 +1,4 @@
-import {
-  SectionContainer,
-  SectionSubtitle,
-  SectionTitle,
-} from "../../UI/Section";
+import { SectionContainer, SectionHeader } from "../../UI/Section";
 import Card from "./Card";
 
 import { Sections } from "../../../constants/sections";
@@ -12,8 +8,10 @@ import { ModalProvider } from "../../../context/modal/provider";
 const Work = () => {
   return (
     <SectionContainer id={Sections.work}>
-      <SectionSubtitle subtitle="Resent Works" />
-      <SectionTitle title="My Portfolio" />
+      <SectionHeader
+        title="Portfolio"
+        subtitle="Works that I want to share with you"
+      />
 
       <div className="work__container container grid">
         {projectsPart.map((project, index) => (

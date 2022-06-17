@@ -1,8 +1,4 @@
-import {
-  SectionContainer,
-  SectionSubtitle,
-  SectionTitle,
-} from "../../UI/Section";
+import { SectionContainer, SectionHeader } from "../../UI/Section";
 import { Sections } from "../../../constants/sections";
 import { testimonials } from "./mock";
 import Card from "./Card";
@@ -10,8 +6,7 @@ import Card from "./Card";
 const Testimonials = () => {
   return (
     <SectionContainer id={Sections.testimonials}>
-      <SectionSubtitle subtitle="My clients say" />
-      <SectionTitle title="Testimonials" />
+      <SectionHeader title="Reviews" subtitle="Some of them can describe me" />
 
       <div className="testimonial__container container">
         <div>

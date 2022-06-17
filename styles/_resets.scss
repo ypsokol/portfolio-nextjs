@@ -1,7 +1,12 @@
 @import "variables";
 
+@font-face {
+  font-family: "Mattone";
+  src: url("/fonts/Mattone-150.woff2") format("woff2");
+}
+
 * {
-  font-family: "Lato", sans-serif;
+  font-family: "Mattone";
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -48,7 +53,7 @@ button {
   outline: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+//img {
+//  max-width: 100%;
+//  height: auto;
+//}

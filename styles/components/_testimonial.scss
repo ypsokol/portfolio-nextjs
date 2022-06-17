@@ -3,13 +3,12 @@
 
 .testimonial {
   &__container {
-    @include lg-screen {
-      width: 750px;
-    }
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
   }
   &__card {
-    margin-bottom: 2rem;
-
+    margin-bottom: 1.5rem;
     @include lg-screen {
       padding: 1.5rem 2rem;
     }

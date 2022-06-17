@@ -9,7 +9,6 @@
   &__container {
     border: 2px solid $container-color-alt;
     border-radius: 2rem;
-    //padding: 1rem;
   }
 
   &__wrapper {
@@ -41,10 +40,19 @@
   }
 
   &__social {
-    display: flex;
-    //justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(1, max-content);
+    row-gap: 0.5rem;
     margin-top: 1rem;
     column-gap: 1.25rem;
+
+    @include xs-screen {
+      grid-template-columns: repeat(2, max-content);
+    }
+
+    @include sm-screen {
+      grid-template-columns: repeat(3, max-content);
+    }
 
     &-link {
       background-color: $body-color;

@@ -15,7 +15,7 @@ type Props = {
 
 const Card = ({ image, name, demo = "", github = "" }: Props) => {
   return (
-    <CardContainer className="work__card">
+    <CardContainer>
       <CardMedia src={image} className="work__media" />
       <CardContent>
         <h3 className="work__title">{name}</h3>
