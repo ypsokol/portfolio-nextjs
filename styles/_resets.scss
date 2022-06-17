@@ -39,6 +39,11 @@ h3 {
   font-weight: $font-semi-bold;
 }
 
+span,
+p {
+  color: $text-color-light;
+}
+
 ul {
   list-style: none;
 }

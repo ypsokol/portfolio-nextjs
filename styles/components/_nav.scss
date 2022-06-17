@@ -33,7 +33,7 @@
 
   &__logo {
     font-size: $h3-font-size;
-    color: $white;
+    color: $title-color;
     font-weight: $font-medium;
     transition: $normal-transition;
 
@@ -54,6 +54,7 @@
 
     @include md-screen {
       position: inherit;
+      margin-right: 1rem;
     }
 
     &-list {
@@ -128,7 +129,12 @@
   &__icon {
     &-container {
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
+      place-items: center;
+
+      @include md-screen {
+        flex-direction: row;
+      }
     }
   }
 }

@@ -4,6 +4,7 @@ import IconButton from "../../UI/IconButton";
 import { useState } from "react";
 import Menu from "./Menu";
 import Logo from "./Logo";
+import ThemeIcon from "./ThemeIcon";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -25,8 +26,9 @@ const Nav = () => {
             </IconButton>
           </div>
 
+          <ThemeIcon />
           {/* TODO: Add functionality theme/language switcher*/}
-          {/*<ThemeIcon />*/}
+
           {/*<LanguageIcon />*/}
         </div>
       </div>

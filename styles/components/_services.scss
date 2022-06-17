@@ -21,6 +21,10 @@
     font-size: $h3-font-size;
     margin-bottom: 2.5rem;
     line-height: 24px;
+
+    & p {
+      color: $title-color;
+    }
   }
 
   &__modal {
