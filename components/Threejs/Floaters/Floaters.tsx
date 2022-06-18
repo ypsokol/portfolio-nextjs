@@ -1,6 +1,6 @@
 import { useMemo, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Object3D } from "three";
+import { InstancedMesh, Object3D } from "three";
 
 import Lightning from "./Lightning";
 import PointLight from "./PointLight";
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Floaters = ({ count }: Props) => {
-  const mesh = useRef();
+  const mesh = useRef<InstancedMesh>(null);
   const { viewport, mouse } = useThree();
 
   const dummy = useMemo(() => new Object3D(), []);
@@ -59,9 +59,10 @@ const Floaters = ({ count }: Props) => {
       dummy.rotation.set(s * 5, s * 5, s * 5);
       dummy.updateMatrix();
       // And apply the matrix to the instanced item
-      mesh.current.setMatrixAt(i, dummy.matrix);
+      // NOTE: Can be dangerous to use ! here
+      mesh.current && mesh.current.setMatrixAt(i, dummy.matrix);
     });
-    mesh.current.instanceMatrix.needsUpdate = true;
+    mesh.current && (mesh.current.instanceMatrix.needsUpdate = true);
   });
   return (
     <>

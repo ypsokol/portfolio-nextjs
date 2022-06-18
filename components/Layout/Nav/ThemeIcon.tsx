@@ -8,7 +8,7 @@ const ThemeIcon = () => {
   useEffect(() => {
     document
       .querySelector("body")
-      .setAttribute("theme", isLight ? "light" : "dark");
+      ?.setAttribute("theme", isLight ? "light" : "dark");
   }, [isLight]);
 
   return (

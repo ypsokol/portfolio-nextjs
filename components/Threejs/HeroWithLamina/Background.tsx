@@ -1,5 +1,5 @@
 import { Depth, LayerMaterial, Noise } from "lamina";
-import { BackSide } from "three";
+import { BackSide, Vector3 } from "three";
 
 const Background = () => {
   return (
@@ -18,7 +18,10 @@ const Background = () => {
           mode="normal"
           near={130}
           far={200}
-          origin={[100, 100, -100]}
+          origin={new Vector3(100, 100, -100)}
+          attachArray={undefined}
+          attachObject={undefined}
+          attachFns={undefined}
         />
         <Noise
           mapping="local"

@@ -10,15 +10,19 @@ type Props = {
   className?: string;
 };
 
-const ModalContainer = ({ className, children }: PropsWithChildren<Props>) => {
+const ModalContainer = ({
+  className = "",
+  children,
+}: PropsWithChildren<Props>) => {
   const { close } = useModal();
   const handleClickOnModal = (e: MouseEvent<HTMLElement>) =>
     e.stopPropagation();
 
-  //TODO: Check an error!
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => (document.body.style.overflow = "unset");
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, []);
 
   return (

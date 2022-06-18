@@ -6,7 +6,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name="theme-color" content="hsl(219, 4%, 7%)" />
-          <link href="/fonts/Mattone-150.woff2" rel="stylesheet" />
         </Head>
         <body>
           <Main />
