@@ -11,7 +11,7 @@ const Testimonials = () => {
       <div className="testimonial__container container">
         <div>
           {testimonials.map((testimonial, index) => (
-            <Card key={index} isEven={index % 2 === 0} {...testimonial} />
+            <Card key={index} {...testimonial} />
           ))}
         </div>
       </div>
