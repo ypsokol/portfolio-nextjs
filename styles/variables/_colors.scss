@@ -8,76 +8,38 @@ $text-color-light-code: hsl(219, 4%, 55%);
 $body-color-code: hsl(219, 48%, 8%);
 $container-color-code: hsl(219, 32%, 12%);
 $container-color-alt-code: hsl(219, 32%, 20%);
-$white-code: #fff;
 
-$nav-menu-color-code: hsla(219, 32%, 16%, 0.8);
-$nav-menu-item-code: hsla(250, 32%, 16%, 0.2);
-$nav-menu-item-alt-code: hsla(250, 32%, 16%, 0.4);
+$white: #fff;
 
-$modal-color-code: hsla(219, 28%, 16%, 0.7);
+$nav-menu-color: hsla(219, 32%, 16%, 0.8);
+$nav-menu-item: hsla(250, 32%, 16%, 0.2);
+$nav-menu-item-alt: hsla(250, 32%, 16%, 0.4);
+
+$modal-color: hsla(219, 28%, 16%, 0.7);
 
 :root [theme="light"] {
-  --primary-color: #{$primary-color-code};
-  --primary-color-alt: #{$primary-color-alt-code};
   --title-color: #{$title-color-code};
   --text-color: #{$text-color-code};
   --text-color-light: #{$text-color-light-code};
   --body-color: #{$body-color-code};
   --container-color: #{$container-color-code};
   --container-color-alt: #{$container-color-alt-code};
-  --white: #{$white-code};
-  --nav-menu-color: #{$nav-menu-color-code};
-  --nav-menu-item: #{$nav-menu-item-code};
-  --nav-menu-item-alt: #{$nav-menu-item-alt-code};
-  --modal-color: #{$modal-color-code};
 }
 
 [theme="dark"] {
-  --primary-color: #{$primary-color-code};
-  --primary-color-alt: #{$primary-color-alt-code};
   --title-color: #343a40;
   --text-color: #343a40;
   --text-color-light: #6c757d;
   --body-color: #edede9;
   --container-color: #e3d5ca;
   --container-color-alt: #d6ccc2;
-  --white: #{$white-code};
-  --nav-menu-color: #{$nav-menu-color-code};
-  --nav-menu-item: #{$nav-menu-item-code};
-  --nav-menu-item-alt: #{$nav-menu-item-alt-code};
-  --modal-color: #{$modal-color-code};
 }
 
-$primary-color: var(--primary-color);
-$primary-color-alt: var(--primary-color-alt);
+$primary-color: $primary-color-code;
+$primary-color-alt: $primary-color-alt-code;
 $title-color: var(--title-color);
 $text-color: var(--text-color);
 $text-color-light: var(--text-color-light);
 $body-color: var(--body-color);
 $container-color: var(--container-color);
 $container-color-alt: var(--container-color-alt);
-$white: var(--white);
-$nav-menu-color: var(--nav-menu-color);
-$nav-menu-item: var(--nav-menu-item);
-$nav-menu-item-alt: var(--nav-menu-item-alt);
-$modal-color: var(--modal-color);
-
-// ------------ Old Files -------------------
-
-//$primary-color: hsl(250, 66%, 75%);
-//$primary-color-alt: hsl(250, 66%, 71%);
-//
-//$title-color: hsl(219, 15%, 95%);
-//$text-color: hsl(219, 8%, 75%);
-//$text-color-light: hsl(219, 4%, 55%);
-//
-//$body-color: hsl(219, 48%, 8%);
-//$container-color: hsl(219, 32%, 12%);
-//$container-color-alt: hsl(219, 32%, 20%);
-//$white: #fff;
-//
-//$nav-menu-color: hsla(219, 32%, 16%, 0.8);
-//$nav-menu-item: hsla(250, 32%, 16%, 0.2);
-//$nav-menu-item-alt: hsla(250, 32%, 16%, 0.4);
-//
-//$modal-color: hsla(219, 28%, 16%, 0.7);
